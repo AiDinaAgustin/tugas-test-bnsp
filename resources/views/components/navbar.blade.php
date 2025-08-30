@@ -1,4 +1,4 @@
-<nav class="bg-white shadow-md fixed top-0 w-full z-50">
+<nav class="bg-white shadow-md w-full z-50">
     <div class="container mx-auto flex justify-between items-center px-6 py-4">
         <div class="flex items-center">
             <img src="{{ asset('logo.png') }}" alt="Logo" class="h-10 mr-3">
