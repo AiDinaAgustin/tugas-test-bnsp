@@ -4,7 +4,7 @@
 
     {{-- Hero Section --}}
     <section class="relative bg-cover bg-center h-[300px] flex items-center justify-center text-white"
-        style="background-image: url('{{ asset('images/hero.jpg') }}')">
+        style="background-image: url('{{ asset('sekolah.png') }}')">
         <div class="bg-black bg-opacity-50 p-6 rounded-lg text-center">
             <h1 class="text-3xl md:text-4xl font-bold">Tentang SMP Negeri 1 Cibadak</h1>
             <p class="mt-2 text-sm md:text-base">Sejarah, Profil, Visi dan Misi</p>

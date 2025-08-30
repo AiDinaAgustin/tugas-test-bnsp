@@ -16,7 +16,8 @@ class News extends Model
         'published_at',
     ];
 
-    protected $dates = [
-        'published_at',
+    // Replace $dates with $casts (modern Laravel approach)
+    protected $casts = [
+        'published_at' => 'datetime',
     ];
 }
