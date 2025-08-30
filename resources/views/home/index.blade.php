@@ -38,36 +38,40 @@
         </div>
     </section>
 
-    {{-- Profil Sekolah --}}
-    <section class="bg-gray-100 py-16">
-        <div class="container mx-auto px-6">
-            <h2 class="text-2xl font-bold text-center mb-10">Profil Sekolah</h2>
-            <div class="grid md:grid-cols-4 gap-6">
-                <div class="p-6 bg-white rounded-lg shadow">Fasilitas</div>
-                <div class="p-6 bg-white rounded-lg shadow">Lokasi</div>
-                <div class="p-6 bg-white rounded-lg shadow">Sejarah</div>
-                <div class="p-6 bg-white rounded-lg shadow">Prestasi</div>
-            </div>
-        </div>
-    </section>
-
-    {{-- Berita dan Agenda --}}
-    <section class="container mx-auto px-6 py-16">
-        <h2 class="text-2xl font-bold mb-6">Berita dan Agenda</h2>
-        <div class="grid md:grid-cols-2 gap-6">
-            <div class="bg-white rounded-lg shadow p-4">Berita 1</div>
-            <div class="bg-white rounded-lg shadow p-4">Agenda 1</div>
-        </div>
-    </section>
-
-    {{-- Gallery --}}
+        {{-- Gallery --}}
     <section class="bg-gray-100 py-16">
         <div class="container mx-auto px-6">
             <h2 class="text-2xl font-bold text-center mb-10">Gallery</h2>
             <div class="grid md:grid-cols-3 gap-6">
-                <img src="{{ asset('images/gallery1.jpg') }}" class="rounded-lg shadow" alt="">
-                <img src="{{ asset('images/gallery2.jpg') }}" class="rounded-lg shadow" alt="">
-                <img src="{{ asset('images/gallery3.jpg') }}" class="rounded-lg shadow" alt="">
+                @forelse($galleryImages as $item)
+                    <div class="block overflow-hidden rounded-lg shadow">
+                        <div class="relative h-60">
+                            <img src="{{ asset('storage/' . $item['image']) }}" 
+                                 alt="{{ $item['title'] }}" 
+                                 class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                                <div class="p-4 text-white">
+                                    <h3 class="font-medium">{{ $item['title'] }}</h3>
+                                    <p class="text-sm opacity-80">
+                                        {{ ucfirst($item['type']) }} - {{ $item['date']->format('d M Y') }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @empty
+                    <div class="col-span-3 p-8 bg-white rounded-lg shadow text-center">
+                        <p>No gallery images available yet.</p>
+                    </div>
+                @endforelse
+            </div>
+            <div class="text-center mt-8">
+                <a href="{{ route('activities') }}" class="inline-block px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 mx-2">
+                    Lihat Kegiatan
+                </a>
+                <a href="{{ route('news') }}" class="inline-block px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 mx-2">
+                    Lihat Berita
+                </a>
             </div>
         </div>
     </section>

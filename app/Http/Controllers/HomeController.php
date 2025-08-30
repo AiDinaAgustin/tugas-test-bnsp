@@ -11,11 +11,50 @@ use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
-    public function index()
+        public function index()
     {
         $news = News::latest('published_at')->take(3)->get();
         $activities = Activity::latest('date')->take(3)->get();
-        return view('home.index', compact('news', 'activities'));
+        
+        // Collect images for gallery
+        $galleryImages = collect();
+        
+        // Add images from activities
+        $activityImages = Activity::whereNotNull('image')
+            ->latest('date')
+            ->take(6)
+            ->get()
+            ->map(function($activity) {
+                return [
+                    'image' => $activity->image,
+                    'title' => $activity->title,
+                    'type' => 'activity',
+                    'id' => $activity->id,
+                    'date' => $activity->date
+                ];
+            });
+        
+        // Add images from news
+        $newsImages = News::whereNotNull('image')
+            ->latest('published_at')
+            ->take(6)
+            ->get()
+            ->map(function($news) {
+                return [
+                    'image' => $news->image,
+                    'title' => $news->title,
+                    'type' => 'news',
+                    'id' => $news->id,
+                    'date' => $news->published_at
+                ];
+            });
+        
+        // Combine and sort by date
+        $galleryImages = $activityImages->concat($newsImages)
+            ->sortByDesc('date')
+            ->take(6);
+        
+        return view('home.index', compact('news', 'activities', 'galleryImages'));
     }
 
     public function about()
