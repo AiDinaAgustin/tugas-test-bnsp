@@ -18,7 +18,7 @@
             <li><a href="{{ route('contact') }}"
                    class="{{ request()->routeIs('contact') ? 'text-blue-600' : 'hover:text-blue-600' }}">Kontak</a></li>
         </ul>
-        <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
+        <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none hover:cursor-pointer">
             <!-- Icon menu mobile -->
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
