@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Activity;
 use App\Models\News;
+use App\Models\Contact;
 use Illuminate\Http\Request;
+use App\Mail\ContactFormMail;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -68,17 +71,20 @@ class HomeController extends Controller
     }
 
     public function submitContact(Request $request)
-    {
-        // Handle contact form submission logic here
-        // Validation example:
-        $validated = $request->validate([
-            'name' => 'required|max:255',
-            'email' => 'required|email',
-            'message' => 'required',
-        ]);
-        
-        // Send email, save to database, etc.
-        
-        return redirect()->route('contact')->with('success', 'Pesan anda telah terkirim!');
-    }
+{
+    $validated = $request->validate([
+        'name' => 'required|max:255',
+        'email' => 'required|email',
+        'phone' => 'nullable|string|max:20',
+        'message' => 'required',
+    ]);
+    
+    // Create a new contact entry
+    $contact = Contact::create($validated);
+    
+    // Send email
+    Mail::to('ai.dina_ti21@nusaputra.ac.id')->send(new ContactFormMail($contact));
+    
+    return redirect()->route('contact')->with('success', 'Pesan anda telah terkirim! Kami akan segera menghubungi Anda.');
+}
 }
