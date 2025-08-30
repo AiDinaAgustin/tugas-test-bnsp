@@ -3,12 +3,12 @@
 @section('content')
 
     {{-- Hero Section --}}
-    <section class="relative bg-cover bg-center h-[500px] flex items-center justify-center text-white"
-        style="background-image: url('{{ asset('sekolah.png') }}')">
+    <section class="relative bg-cover bg-center h-[500px] flex items-center justify-center text-white pt-16"
+             style="background-image: url('{{ asset('sekolah.png') }}')">
         <div class="bg-black bg-opacity-50 p-6 rounded-lg text-center">
             <h1 class="text-3xl font-bold mb-4">MOTTO</h1>
             <p class="max-w-2xl mx-auto">
-                SMPN 1 Cibadak (Cerdas Beretika) Ceria, Empati, Rasional, Damai, Aktif, Sabar, Bersih, Elok, 
+                SMPN 1 Cibadak (Cerdas Beretika) Ceria, Empati, Rasional, Damai, Aktif, Sabar, Bersih, Elok,
                 Tulus, Iman, Konsisten, Amanah.
             </p>
             <a href="/kontak" class="mt-6 inline-block bg-blue-600 px-6 py-2 rounded-lg hover:bg-blue-700">
@@ -25,10 +25,15 @@
         <div class="flex flex-col justify-center">
             <h2 class="text-2xl font-bold mb-4">Sambutan Kepala Sekolah SMP Negeri 1 Cibadak</h2>
             <p class="text-gray-700">
-            Puji dan syukur mari kita panjatkan ke hadirat Allah SWT, Tuhan Yang Maha Esa, yang senantiasa dengan kasih dan sayang-Nya melimpahkan berbagai nikmat dan karunia kepada kita semua. Shalawat serta salam semoga tetap tercurah kepada junjungan kita Nabi Muhammad SAW, keluarga, sahabat, dan para pengikutnya hingga akhir zaman.
+                Puji dan syukur mari kita panjatkan ke hadirat Allah SWT, Tuhan Yang Maha Esa, yang senantiasa dengan
+                kasih dan sayang-Nya melimpahkan berbagai nikmat dan karunia kepada kita semua. Shalawat serta salam
+                semoga tetap tercurah kepada junjungan kita Nabi Muhammad SAW, keluarga, sahabat, dan para pengikutnya
+                hingga akhir zaman.
             </p>
             <p class="text-gray-700">
-            Dengan rasa bangga dan penuh rasa syukur, saya menyambut kehadiran Anda di website resmi [Nama Sekolah], sebuah media informasi dan komunikasi yang kami hadirkan untuk memperkenalkan profil sekolah, kegiatan, serta berbagai pencapaian yang telah diraih.
+                Dengan rasa bangga dan penuh rasa syukur, saya menyambut kehadiran Anda di website resmi [Nama Sekolah],
+                sebuah media informasi dan komunikasi yang kami hadirkan untuk memperkenalkan profil sekolah, kegiatan,
+                serta berbagai pencapaian yang telah diraih.
             </p>
         </div>
     </section>

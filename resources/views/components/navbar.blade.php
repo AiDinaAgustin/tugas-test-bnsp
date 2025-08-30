@@ -1,4 +1,4 @@
-<nav class="bg-white shadow-md w-full z-50">
+<nav class="bg-white shadow-md fixed top-0 w-full z-50">
     <div class="container mx-auto flex justify-between items-center px-6 py-4">
         <div class="flex items-center">
             <img src="{{ asset('logo.png') }}" alt="Logo" class="h-10 mr-3">
@@ -18,7 +18,7 @@
             <li><a href="{{ route('contact') }}"
                    class="{{ request()->routeIs('contact') ? 'text-blue-600' : 'hover:text-blue-600' }}">Kontak</a></li>
         </ul>
-        <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
+        <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none hover:cursor-pointer">
             <!-- Icon menu mobile -->
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
