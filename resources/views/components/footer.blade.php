@@ -7,7 +7,7 @@
                 Jl. Siliwangi No 123, Cibadak, Sukabumi, Jawa Barat 43351, Indonesia
             </p>
             <p class="mt-2 text-sm">Telp: (0266)123456</p>
-            <p class="text-sm">Email: info@smpncibadak.sch.id</p>
+            <p class="text-sm">Email: ai.dina_ti21@nusaputra.ac.id</p>
         </div>
 
         <!-- Navigasi -->

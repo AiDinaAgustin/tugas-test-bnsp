@@ -27,41 +27,48 @@
         <form action="{{ route('contact.submit') }}" method="POST" class="grid grid-cols-1 gap-6 max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md">
             @csrf
             <div>
-                <label for="name" class="block mb-1 font-semibold">Nama</label>
-                <input type="text" id="name" name="name" value="{{ old('name') }}"
-                       class="w-full border border-gray-300 rounded-lg shadow-sm px-4 py-3 focus:ring focus:ring-blue-200 focus:border-blue-400 hover:border-blue-400 transition focus:outline focus:outline-blue-500 focus:outline-2 focus:outline-offset-2"> 
+                <label for="name" class="block mb-1 font-semibold">Nama <span class="text-red-500">*</span></label>
+                <input type="text" id="name" name="name" value="{{ old('name') }}" required
+                       placeholder="Masukkan nama lengkap"
+                       class="w-full border border-gray-300 rounded-lg shadow-sm px-4 py-3 focus:ring focus:ring-blue-200 focus:border-blue-400 hover:border-blue-400 transition focus:outline focus:outline-blue-500 focus:outline-2 focus:outline-offset-2 @error('name') border-red-500 @enderror"> 
                 @error('name')
                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p> 
                 @enderror
             </div>
-
+        
             <div>
-                <label for="email" class="block mb-1 font-semibold">Email</label>
-                <input type="email" id="email" name="email" value="{{ old('email') }}"
-                       class="w-full border border-gray-300 rounded-lg shadow-sm px-4 py-3 focus:ring focus:ring-blue-200 focus:border-blue-400 hover:border-blue-400 transition focus:outline focus:outline-blue-500 focus:outline-2 focus:outline-offset-2"> 
+                <label for="email" class="block mb-1 font-semibold">Email <span class="text-red-500">*</span></label>
+                <input type="email" id="email" name="email" value="{{ old('email') }}" required
+                       placeholder="contoh@email.com"
+                       class="w-full border border-gray-300 rounded-lg shadow-sm px-4 py-3 focus:ring focus:ring-blue-200 focus:border-blue-400 hover:border-blue-400 transition focus:outline focus:outline-blue-500 focus:outline-2 focus:outline-offset-2 @error('email') border-red-500 @enderror"> 
                 @error('email')
                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p> 
                 @enderror
             </div>
-
+        
             <div>
-                <label for="phone" class="block mb-1 font-semibold">No Telp</label>
-                <input type="text" id="phone" name="phone" value="{{ old('phone') }}"
-                       class="w-full border border-gray-300 rounded-lg shadow-sm px-4 py-3 focus:ring focus:ring-blue-200 focus:border-blue-400 hover:border-blue-400 transition focus:outline focus:outline-blue-500 focus:outline-2 focus:outline-offset-2"> 
+                <label for="phone" class="block mb-1 font-semibold">No Telp <span class="text-red-500">*</span></label>
+                <input type="tel" id="phone" name="phone" value="{{ old('phone') }}" required
+                       placeholder="08xxxxxxxxxx"
+                       pattern="[0-9\s\-\+\(\)]*"
+                       title="Hanya boleh angka, spasi, dan karakter + - ( )"
+                       class="w-full border border-gray-300 rounded-lg shadow-sm px-4 py-3 focus:ring focus:ring-blue-200 focus:border-blue-400 hover:border-blue-400 transition focus:outline focus:outline-blue-500 focus:outline-2 focus:outline-offset-2 @error('phone') border-red-500 @enderror"> 
                 @error('phone')
                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p> 
                 @enderror
             </div>
-
+        
             <div>
-                <label for="message" class="block mb-1 font-semibold">Isi Pesan</label>
-                <textarea id="message" name="message" rows="5"
-                          class="w-full border border-gray-300 rounded-lg shadow-sm px-4 py-3 focus:ring focus:ring-blue-200 focus:border-blue-400 hover:border-blue-400 transition focus:outline focus:outline-blue-500 focus:outline-2 focus:outline-offset-2">{{ old('message') }}</textarea> 
+                <label for="message" class="block mb-1 font-semibold">Isi Pesan <span class="text-red-500">*</span></label>
+                <textarea id="message" name="message" rows="5" required
+                          placeholder="Tulis pesan anda disini (minimal 10 karakter)"
+                          minlength="10"
+                          class="w-full border border-gray-300 rounded-lg shadow-sm px-4 py-3 focus:ring focus:ring-blue-200 focus:border-blue-400 hover:border-blue-400 transition focus:outline focus:outline-blue-500 focus:outline-2 focus:outline-offset-2 @error('message') border-red-500 @enderror">{{ old('message') }}</textarea> 
                 @error('message')
                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p> 
                 @enderror
             </div>
-
+        
             <div class="w-full">
                 <button type="submit"
                         class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition w-full hover:cursor-pointer">
