@@ -3,8 +3,8 @@
 @section('content')
 
     {{-- Hero Section --}}
-    <section class="relative bg-cover bg-center h-[300px] flex items-center justify-center text-white"
-        style="background-image: url('{{ asset('sekolah.png') }}')">
+    <section class="relative bg-cover bg-center h-[300px] flex items-center justify-center text-white pt-16"
+             style="background-image: url('{{ asset('sekolah.png') }}')">
         <div class="bg-black bg-opacity-50 p-6 rounded-lg text-center">
             <h1 class="text-3xl md:text-4xl font-bold">Tentang SMP Negeri 1 Cibadak</h1>
             <p class="mt-2 text-sm md:text-base">Sejarah, Profil, Visi dan Misi</p>
@@ -65,36 +65,36 @@
                 <div class="overflow-x-auto">
                     <table class="w-full border border-gray-200">
                         <thead class="bg-blue-600 text-white">
-                            <tr>
-                                <th class="p-2">Kelas</th>
-                                <th class="p-2">Laki-laki</th>
-                                <th class="p-2">Perempuan</th>
-                                <th class="p-2">Jumlah</th>
-                                <th class="p-2">Jumlah Rombel</th>
-                            </tr>
+                        <tr>
+                            <th class="p-2">Kelas</th>
+                            <th class="p-2">Laki-laki</th>
+                            <th class="p-2">Perempuan</th>
+                            <th class="p-2">Jumlah</th>
+                            <th class="p-2">Jumlah Rombel</th>
+                        </tr>
                         </thead>
                         <tbody>
-                            <tr class="text-center border-b">
-                                <td class="p-2">VII</td>
-                                <td class="p-2">140</td>
-                                <td class="p-2">196</td>
-                                <td class="p-2">336</td>
-                                <td class="p-2">8</td>
-                            </tr>
-                            <tr class="text-center border-b bg-gray-50">
-                                <td class="p-2">VIII</td>
-                                <td class="p-2">140</td>
-                                <td class="p-2">196</td>
-                                <td class="p-2">336</td>
-                                <td class="p-2">8</td>
-                            </tr>
-                            <tr class="text-center border-b">
-                                <td class="p-2">IX</td>
-                                <td class="p-2">140</td>
-                                <td class="p-2">196</td>
-                                <td class="p-2">336</td>
-                                <td class="p-2">8</td>
-                            </tr>
+                        <tr class="text-center border-b">
+                            <td class="p-2">VII</td>
+                            <td class="p-2">140</td>
+                            <td class="p-2">196</td>
+                            <td class="p-2">336</td>
+                            <td class="p-2">8</td>
+                        </tr>
+                        <tr class="text-center border-b bg-gray-50">
+                            <td class="p-2">VIII</td>
+                            <td class="p-2">140</td>
+                            <td class="p-2">196</td>
+                            <td class="p-2">336</td>
+                            <td class="p-2">8</td>
+                        </tr>
+                        <tr class="text-center border-b">
+                            <td class="p-2">IX</td>
+                            <td class="p-2">140</td>
+                            <td class="p-2">196</td>
+                            <td class="p-2">336</td>
+                            <td class="p-2">8</td>
+                        </tr>
                         </tbody>
                     </table>
                 </div>
@@ -111,7 +111,8 @@
             <div class="bg-white shadow rounded-lg p-6">
                 <h3 class="text-lg font-semibold mb-2">Visi</h3>
                 <p class="text-gray-700">
-                    Membentuk pembelajar yang akhlakul karimah, berilmu, beretika, berwawasan lingkungan untuk menuju pentas dunia.
+                    Membentuk pembelajar yang akhlakul karimah, berilmu, beretika, berwawasan lingkungan untuk menuju
+                    pentas dunia.
                 </p>
             </div>
             <div class="bg-white shadow rounded-lg p-6">
@@ -139,7 +140,8 @@
             <div class="bg-blue-600 text-white p-6 rounded-lg text-center">
                 <h3 class="text-lg font-semibold mb-2">Strategi</h3>
                 <p>
-                    Tiada kekayaan yang paling utama daripada kekayaan jiwa, tiada kepapaan yang paling menyedihkan daripada kebodohan, dan tiada warisan paling baik daripada pendidikan.
+                    Tiada kekayaan yang paling utama daripada kekayaan jiwa, tiada kepapaan yang paling menyedihkan
+                    daripada kebodohan, dan tiada warisan paling baik daripada pendidikan.
                 </p>
             </div>
         </div>
