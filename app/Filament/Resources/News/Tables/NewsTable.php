@@ -17,7 +17,11 @@ class NewsTable
             ->columns([
                 TextColumn::make('title')
                     ->searchable(),
-                ImageColumn::make('image'),
+                ImageColumn::make('image')
+                    ->disk('public')
+                    ->circular(false)
+                    ->height(60)
+                    ->extraImgAttributes(['class' => 'object-cover']),
                 TextColumn::make('published_at')
                     ->date()
                     ->sortable(),

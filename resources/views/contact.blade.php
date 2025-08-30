@@ -4,7 +4,7 @@
 
     {{-- Hero Section --}}
     <section class="relative bg-cover bg-center h-[250px] flex items-center justify-center text-white"
-        style="background-image: url('{{ asset('images/hero-contact.jpg') }}')">
+        style="background-image: url('{{ asset('sekolah.png') }}')">
         <div class="bg-black bg-opacity-50 p-6 rounded-lg text-center">
             <h1 class="text-3xl md:text-4xl font-bold">Kontak Kami</h1>
             <p class="mt-2 text-sm md:text-base">Jika Memiliki Pertanyaan Bisa Langsung Isi Form di Bawah Ini</p>

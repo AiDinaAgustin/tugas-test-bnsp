@@ -32,16 +32,34 @@ class HomeController extends Controller
         return view('activity-detail', compact('activity'));
     }
 
-    public function news()
+        public function news()
     {
-        $news = News::all();
-        return view('news', compact('news'));
+        $allNews = News::latest('published_at')->get();
+        
+        // Main news list
+        $news = News::latest('published_at')->take(6)->get();
+        
+        // Highlight news (featured)
+        $highlight = $allNews->first();
+        
+        // More news (exclude highlight)
+        $moreNews = $allNews->skip(1)->take(3);
+        
+        // Recent posts for tags
+        $recentPosts = $allNews->take(5);
+        
+        return view('news', compact('news', 'highlight', 'moreNews', 'recentPosts'));
     }
     
     public function newsDetail($id)
     {
         $news = News::findOrFail($id);
-        return view('news-detail', compact('news'));
+        $recentNews = News::where('id', '!=', $id)
+                          ->latest('published_at')
+                          ->take(3)
+                          ->get();
+        
+        return view('news-detail', compact('news', 'recentNews'));
     }
 
     public function contact()
