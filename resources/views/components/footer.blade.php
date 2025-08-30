@@ -2,7 +2,7 @@
     <div class="container mx-auto px-6 py-10 grid md:grid-cols-3 gap-8">
         <!-- Info Sekolah -->
         <div>
-            <img src="{{ asset('images/logo.png') }}" class="h-12 mb-3" alt="Logo Sekolah">
+            <img src="{{ asset('logo.png') }}" class="h-12 mb-3" alt="Logo Sekolah">
             <p class="text-sm">
                 Jl. Siliwangi No 123, Cibadak, Sukabumi, Jawa Barat 43351, Indonesia
             </p>
@@ -26,9 +26,11 @@
         <div>
             <h3 class="font-semibold mb-3">Media Sosial</h3>
             <div class="flex space-x-4">
-                <a href="#"><i class="fab fa-facebook text-xl"></i></a>
-                <a href="#"><i class="fab fa-twitter text-xl"></i></a>
-                <a href="#"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="https://www.facebook.com/p/SMPN-1-CIBADAK-STOENDAK-100054479020104/"><i
+                        class="fab fa-facebook text-xl"></i></a>
+                <a href="info@smpn1cibadak.sch.id
+"><i class="fa-solid fa-envelope text-xl"></i></a>
+                <a href="https://www.instagram.com/stoendaksukabumi/?hl=en"><i class="fab fa-instagram text-xl"></i></a>
             </div>
         </div>
     </div>
