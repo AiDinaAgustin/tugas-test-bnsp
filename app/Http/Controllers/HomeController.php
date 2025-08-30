@@ -22,7 +22,7 @@ class HomeController extends Controller
 
     public function activities()
     {
-        $activities = Activity::all();
+        $activities = Activity::latest('date')->paginate(6);
         return view('activities', compact('activities'));
     }
     

@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Laravel App')</title>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <title>{{ $title ?? 'SMPN 1 Cibadak' }}</title>
+    @vite('resources/css/app.css')
 </head>
-<body>
+<body class="font-sans text-gray-800">
+
+    {{-- Navbar --}}
     @include('components.navbar')
 
-    <div class="container">
+    {{-- Main Content --}}
+    <main>
         @yield('content')
-    </div>
+    </main>
 
+    {{-- Footer --}}
     @include('components.footer')
 
-    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
