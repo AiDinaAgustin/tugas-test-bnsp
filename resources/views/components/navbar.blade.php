@@ -1,22 +1,52 @@
-<nav class="bg-white shadow-md fixed top-0 w-full z-50">
+<nav class="bg-white shadow-md w-full z-50">
     <div class="container mx-auto flex justify-between items-center px-6 py-4">
         <div class="flex items-center">
             <img src="{{ asset('logo.png') }}" alt="Logo" class="h-10 mr-3">
             <span class="font-bold text-lg">SMPN 1 Cibadak</span>
         </div>
-        <ul class="hidden md:flex space-x-6 font-medium">
-            <li><a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'text-blue-600' : 'hover:text-blue-600' }}">Beranda</a></li>
-            <li><a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'text-blue-600' : 'hover:text-blue-600' }}">Tentang Kami</a></li>
-            <li><a href="{{ route('activities') }}" class="{{ request()->routeIs('activities') ? 'text-blue-600' : 'hover:text-blue-600' }}">Kegiatan</a></li>
-            <li><a href="{{ route('news') }}" class="{{ request()->routeIs('news') ? 'text-blue-600' : 'hover:text-blue-600' }}">Berita</a></li>
-            <li><a href="{{ route('contact') }}" class="{{ request()->routeIs('contact') ? 'text-blue-600' : 'hover:text-blue-600' }}">Kontak</a></li>
+        <ul id="navbar-menu" class="hidden md:flex space-x-6 font-medium">
+            <li><a href="{{ route('home') }}"
+                   class="{{ request()->routeIs('home') ? 'text-blue-600' : 'hover:text-blue-600' }}">Beranda</a></li>
+            <li><a href="{{ route('about') }}"
+                   class="{{ request()->routeIs('about') ? 'text-blue-600' : 'hover:text-blue-600' }}">Tentang Kami</a>
+            </li>
+            <li><a href="{{ route('activities') }}"
+                   class="{{ request()->routeIs('activities') ? 'text-blue-600' : 'hover:text-blue-600' }}">Kegiatan</a>
+            </li>
+            <li><a href="{{ route('news') }}"
+                   class="{{ request()->routeIs('news') ? 'text-blue-600' : 'hover:text-blue-600' }}">Berita</a></li>
+            <li><a href="{{ route('contact') }}"
+                   class="{{ request()->routeIs('contact') ? 'text-blue-600' : 'hover:text-blue-600' }}">Kontak</a></li>
         </ul>
-        <button class="md:hidden text-gray-700 focus:outline-none">
+        <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
             <!-- Icon menu mobile -->
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M4 6h16M4 12h16M4 18h16"/>
+                      d="M4 6h16M4 12h16M4 18h16"/>
             </svg>
         </button>
     </div>
+    <!-- Mobile menu -->
+    <ul id="mobile-menu" class="hidden flex-col space-y-4 bg-white shadow-md px-6 py-4 md:hidden">
+        <li><a href="{{ route('home') }}"
+               class="{{ request()->routeIs('home') ? 'text-blue-600' : 'hover:text-blue-600' }}">Beranda</a></li>
+        <li><a href="{{ route('about') }}"
+               class="{{ request()->routeIs('about') ? 'text-blue-600' : 'hover:text-blue-600' }}">Tentang Kami</a></li>
+        <li><a href="{{ route('activities') }}"
+               class="{{ request()->routeIs('activities') ? 'text-blue-600' : 'hover:text-blue-600' }}">Kegiatan</a>
+        </li>
+        <li><a href="{{ route('news') }}"
+               class="{{ request()->routeIs('news') ? 'text-blue-600' : 'hover:text-blue-600' }}">Berita</a></li>
+        <li><a href="{{ route('contact') }}"
+               class="{{ request()->routeIs('contact') ? 'text-blue-600' : 'hover:text-blue-600' }}">Kontak</a></li>
+    </ul>
 </nav>
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
